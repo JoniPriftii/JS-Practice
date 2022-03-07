@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import "baseStyles.css";
+
+body{
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*      HEADER      */
+header{
+    position:relative;
+    width:100%;
+    height:70px;
+    border-bottom:1px solid lightgray;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+#logo{
+    font-size:35px;
+    color:var(--pink)   
+}
+
+#search-menu{
+    display:flex;
+    align-items: center;
+}
+
+
+
+/*ikon menure resposnive pa nevoj JS*/
+/*ne varesi te checkbox nqs eshte i cekuar ose jo, elementi i aferm i tij me ID = menu do te shfaqet ose do te fshihet*/
+/*Shiko @median e headerit*/
+#menu-icn-check{
+    display:none;
+}
+
+#menu-icon{
+    display:none;
+    width:60px;
+    padding:5px;
+}
+#menu-icon div{
+    background:black;
+    width:25px;
+    height:3px;
+    border-radius:5px;
+    margin:5px auto 0;
+}
+
+
+#menu{
+    display:flex;
+    justify-content: space-around;
+    margin-left:20px;
+}
+#menu a{
+    height:70px;
+    line-height: 70px;
+    font-weight: bold;;
+    padding:0 25px;
+    border-left:1px solid lightgray;
+}
+
+
+
+.link:hover{
+    color:var(--light-blue);
+    text-decoration: none;
+}
+.active{
+    color:var(--light-blue)
+}
+
+@media (max-width:1050px){
+    header{
+        justify-content: space-between;
+        padding:0 20px;
+    }
+    #menu{
+        display:none;
+        position: absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        height:300px;
+        margin:0;
+        padding:20px 0 0;
+        background:black;
+        flex-direction: column;
+        z-index:15;
+    }
+
+    #menu a{
+        height:30px;
+        line-height: 0;
+        border-left:none;
+        border-bottom:1px solid lightgray;
+        color:white;
+        margin:10px;
+    }
+
+    #menu-icon{
+        display:block;
+        margin-left:20px;
+    }
+    /*resposiviteti i menus*/
+    /*===============================*/
+    #menu-icn-check:checked ~ #menu{
+        display:flex;
+    }
+    /*===============================*/
+}
+
+@media (max-width:700px){
+    #nav-search{
+        width:250px
+    }
+    #menu-icon{
+        width:30px;
+        padding:0;
+        margin-left:5px;
+    }
+}
+/*      Header END      */
+
+
+
+
+
+
+
+/*      #OPPENING        */
+#oppening{
+    display:flex;
+    padding:20px;
+    height:900px;
+}
+
+
+/*LEFT SIDE*/
+#ready{
+    text-align: left;
+    width:50%;
+}
+#ready h1{
+    font-size:60px;
+}
+
+
+/*RIGHT(images) SIDE*/
+#images{
+    position:relative;
+    width:50%;
+}
+.first{
+    background-image:url(https://images.ctfassets.net/q8mvene1wzq4/7tbzt327zCvFYIEDZH2WMF/f0f973a6559734ef14c713f041b4134a/home_hero_1_tile.jpg?w=1000&q=60&fm=webp);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:100%;
+    height:600px;
+}
+.second{
+    position:absolute;
+    top:380px;
+    left:-150px;
+    background-image:url(https://images.ctfassets.net/q8mvene1wzq4/4AG5Z6ucAgN07j4WnPenfP/53532edcadcb2086955c2a8338dceeac/Driver_wearing_a_mask_in_the_car.jpg?w=800&q=60&fm=webp);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:500px;
+    height:400px;
+    z-index:2;
+}
+
+
+@media (max-width:1000px){
+    #oppening{
+        flex-direction: column;
+        height:auto;
+    }
+    #ready , #images{
+        width:100%;
+        text-align:center;
+    }
+
+    .first{
+        width:700px;
+        height:900px;
+        margin:0 auto;
+    }
+    .second{
+        display:none;
+    }
+}
+@media (max-width:700px){
+    .first{
+        width:100%;
+        background-position:left;
+    }
+}
+
+
+#masks{
+    height:400px;
+}
+#vaccine .main-image{
+    height:250px;
+}
+
+/*      section modelling       */
+.main-section{
+    display:flex;
+    justify-content: space-around;
+    width:95%;
+    margin:0 auto 60px;
+}
+.main-section:nth-of-type(2n+1){
+    flex-direction:row-reverse;
+}
+.main-section > * {
+    width:40%;
+}
+.main-image{
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:400px;
+    height:500px;
+}
+
+@media (max-width:900px){
+    .main-section{
+        flex-direction:column-reverse;
+        align-items:center;
+        text-align: center;
+    }
+    .main-section > *{
+        width:90%;
+        margin:10px;
+    }
+    .main-section .main-image{
+        background-position:top;
+    }
+
+
+    /*first section*/
+    #short-driver-info{
+        flex-direction: column-reverse;
+    }
+    #short-driver-info button,
+    #masks button{
+        display:block;
+        margin:0 auto 20px;
+    }
+
+    #benefits{
+        text-align: left;
+        padding:40px;
+    }
+
+    /*second section*/
+    #masks {
+        height:570px;
+        flex-direction:column-reverse;
+    }
+    #masks .main-image{
+        height:300px;
+        background-size:contain;
+    }
+
+    /*third section*/
+    #vaccine{
+        flex-direction: column-reverse;
+    }
+    
+}
+
+/*sections images*/
+
+#short-driver-info .main-image{
+    background-image:url(https://images.ctfassets.net/q8mvene1wzq4/3onG3zYDb9ZQ2fi0ID4xKG/4ea1b75f22ed7c57d70490e4b6cf3730/driver_section_2x.jpg?w=1500&q=60&fm=webp);
+    border-radius:0 50% 0 0;
+}
+#masks .main-image{
+    background-image: url(https://images.ctfassets.net/q8mvene1wzq4/5p4p9f1GFUzKr5y6aBFvAO/e78a1ce5741fb8442487b4a6125cfd59/HealthSafety_2x.png?w=1500&q=60&fm=webp);
+    background-size:contain;
+}
+#vaccine .main-image{
+    background-image: url(https://images.ctfassets.net/q8mvene1wzq4/3pdKBmNsaWZsgfSMtkVFjH/08d5d280115e19c3b44bd2633d72927f/Driver_Vaccine_Access.jpg?w=1500&q=60&fm=webp);
+    background-position:left;
+    border-radius:50% 0 0 0 ;
+}
+
+
+
+
+
+/*      OPINIONS SLIDER     */
+#big-box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contain{
+    width:1350px;
+    margin:0 auto 100px;
+    overflow:hidden;
+}
+#slider{
+    display:inline-flex;
+    transition:0.5s;
+    /*pozicion fillestar (pa rendesi)*/
+    /*-------------------------------*/
+    transform:translateX(-50%);
+    /*-------------------------------*/
+}
+#slider .colon{
+    /*total width: 25px <= 400px =>25px */
+    width:400px;
+    margin:20px 25px;
+    text-align:center;
+}
+#slider div img{
+    width:60px;
+    
+}
+
+#dots div{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin:-50px 10px 20px;
+    background:black;
+    border-radius:50%;
+    transition:0.2s;
+}
+#dots div:hover{
+    background:grey;
+}
+
+@media (max-width:1400px){
+    #contain{
+        width:900px;
+    }
+}
+@media (max-width:1000px){
+    #contain{
+        width:450px;
+    }
+}  
+
+
+
+
+
+/*      READY-TO-ROLL       */
+#ready-to-roll{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:var(--blue);
+    width:100%;
+    padding:20px;
+}
+#ready-to-roll p{
+    font-size:20px;
+    font-weight:bold;
+    color:white;
+    margin-right:40px;
+}
+#ready-to-roll .input-wrapper:first-of-type{
+    margin-right:10px;
+}
+@media (max-width:1100px){
+    #ready-to-roll .input-wrapper{
+        
+        width:250px;
+    }
+}
+@media (max-width:950px){
+    #ready-to-roll{
+        flex-direction:column;
+        align-items: flex-start;
+        padding:20px;
+    }
+    #ready-to-roll .input-wrapper{
+        width:90%;
+        margin:20px;;
+    }
+    #ready-to-roll .input-wrapper input{
+        width:95%;
+    }
+}
+
+
+/*      cHANGING-TEXT       */
+#changing-text .content{
+    text-align:center;
+}
+
+#changing-text .content .business{
+    color:var(--pink);
+    font-size:25px;
+}
+
+.text-slider{
+    position:relative;
+    width:400px;
+    height:40px;
+    overflow:hidden;
+    margin:-10px auto;
+}
+.teksti{
+    position:relative;
+    height:40px;
+    top:0;
+    animation: animimii 14.5s infinite alternate  ;
+    color:gray
+}
+.teksti p {
+    margin:0;
+    height:40px;
+}
+@keyframes animimii{
+    0%{
+        top:0;
+    }
+    10%{
+        top:0;
+    }
+    15%{
+        top:-40px;
+    }
+    25%{
+        top:-40px;
+    }
+    30%{
+        top:-80px;
+    }
+    40%{
+        top:-80px;
+    }
+    45%{
+        top:-120px;
+    }
+    55%{
+        top:-120px;
+    }
+    60%{
+        top:-160px;
+    }
+    70%{
+        top:-160px;
+    }
+    75%{
+        top:-200px;
+    }
+    85%{
+        top:-200px;
+    }
+    90%{
+        top:-240px;
+    }
+    100%{
+        top:-240px;
+    }
+}
+
+
+
+#logos{
+    position:relative;
+    display:flex;
+    align-items: center;
+    height:60px;
+    margin:0 auto;
+    width:70%;
+    overflow:hidden;
+}
+#slider2{
+    position:relative;
+    display:flex;
+    height:100%;
+    transition: left 0.4s;
+}
+#slider2 img{
+    width:120px;
+    margin:0 20px
+}
+
+
+
+.scroll-icons{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;;
+    width:130px;
+    height:50px;
+    margin:0 auto;
+}
+.left, .right{
+    width:30px;
+    height:30px;
+    padding:5px 4px;
+    border:1px solid gray;
+    border-radius:50%;
+}
+.left:hover , .right:hover{
+    background:lightgray;
+}
+
+.dots{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border:1px solid gray;
+    border-radius:50px;
+    transition:background 0.2s;
+}
+
+
+/*      FOOTER      */
+footer{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(180deg, rgb(208, 211, 214) 0%, rgb(238, 241, 241) 10%);
+    padding:30px;
+}
+#uls{
+    display:flex;
+    justify-content: space-around;
+    width:800px;
+
+}
+.ul li{
+    list-style-type:none;
+    font-weight: 400;
+    padding:10px 0;
+}
+.ul li:hover{
+    color:var(--purple);
+}
+
+
+#buttons{
+    display:Flex;
+    flex-direction:column;
+}
+.ul .motivation{
+    display:inline-block;
+    width:100%;
+    padding:10px 15px 15px;;
+}
+.ul .motivation:hover{
+    cursor: pointer;
+}
+
+
+@media (max-width:850px){
+    footer , #uls{
+        flex-direction:column;
+    }
+    #uls{
+        width:100%;
+    }
+
+    .ul{
+        border-bottom:2px solid grey;
+        margin:0 30px
+    }
+    
+    ul {
+        display:none;
+    }
+    .display{
+        display: block;
+    }
+    .go-for:hover{
+        cursor: pointer;
+    }
+}
+
+
+
+/*      DOCUMENT CLASSES        */
+.section {
+    display:flex;
+    justify-content: space-around;
+    width:90%;
+    margin:0 auto 60px;
+}
+.section-h2{
+    font-size:30px;
+    font-weight: 600;
+}
+.motivation{
+    font-size:16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+
+.black-background{
+    background:black;
+}
+.hide{
+    visibility: hidden;
+}
